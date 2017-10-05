@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class King extends Piece {
 
@@ -7,7 +7,7 @@ public class King extends Piece {
     }
     @Override
     public String algebraicName() {
-       return "K";
+        return "K";
     }
     @Override
     public String fenName() {
@@ -25,9 +25,16 @@ public class King extends Piece {
 
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
-                if (((colTo == colFrom) && (Math.abs(rowTo - rowFrom) == 1))
-                        || ((Math.abs(rowTo - rowFrom) == 1) && (Math.abs(colTo - colFrom) == 1))
-                        || ((rowTo == rowFrom) && (Math.abs(colTo - colFrom) == 1))) {
+                if (((colTo == colFrom)
+                    && (Math.abs(rowTo - rowFrom)
+                        == 1))
+                    || ((Math.abs(rowTo - rowFrom)
+                        == 1)
+                    && (Math.abs(colTo - colFrom)
+                        == 1))
+                    || ((rowTo == rowFrom)
+                    && (Math.abs(colTo - colFrom)
+                        == 1))) {
                     count++;
                 }
             }
@@ -37,9 +44,12 @@ public class King extends Piece {
         Square[] squares = new Square[count];
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
-                if (((colTo == colFrom) && (Math.abs(rowTo - rowFrom) == 1))
-                        || ((Math.abs(rowTo - rowFrom) == 1) && (Math.abs(colTo - colFrom) == 1))
-                        || ((rowTo == rowFrom) && (Math.abs(colTo - colFrom) == 1))) {
+                if (((colTo == colFrom)
+                    && (Math.abs(rowTo - rowFrom) == 1))
+                        || ((Math.abs(rowTo - rowFrom) == 1)
+                         && (Math.abs(colTo - colFrom) == 1))
+                        || ((rowTo == rowFrom)
+                            && (Math.abs(colTo - colFrom) == 1))) {
                     char row = Integer.toString(8 - rowFrom).charAt(0);
                     char col = (char) (colFrom + 'a');
                     Square temp = new Square(col, row);

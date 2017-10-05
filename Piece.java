@@ -1,5 +1,5 @@
 public abstract class Piece {
-    Color color;
+    private Color color;
 
     public Piece(Color color) {
         this.color = color;

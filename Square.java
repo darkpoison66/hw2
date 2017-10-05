@@ -10,8 +10,7 @@ public class Square {
     }
 
     public Square(String name) {
-        file = name.charAt(0);
-        rank = name.charAt(1);
+        this(name.charAt(0) , name.charAt(1));
         this.name = name;
     }
 
@@ -20,17 +19,17 @@ public class Square {
     }
     @Override
     public boolean equals(Object other) {
-        if(null == other) {
+        if (null == other) {
             return false;
         }
-        if(this == other) {
+        if (this == other) {
             return true;
         }
-        if(!(other instanceof Square)) {
-                return false;
+        if (!(other instanceof Square)) {
+            return false;
         }
         Square that = (Square) other;
         return this.name.equals(that.name);
-        }
     }
+}
 

@@ -26,7 +26,8 @@ public class Queen extends Piece {
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
                 if (((rowTo == rowFrom || colTo == colFrom)
-                        || ((Math.abs(rowFrom - rowTo)) == Math.abs(colFrom - colTo)))
+                        || ((Math.abs(rowFrom - rowTo))
+                        == Math.abs(colFrom - colTo)))
                         && !(rowTo == rowFrom && colFrom == colTo)) {
                     count++;
                 }
@@ -38,7 +39,8 @@ public class Queen extends Piece {
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
                 if (((rowTo == rowFrom || colTo == colFrom)
-                        || ((Math.abs(rowFrom - rowTo)) == Math.abs(colFrom - colTo)))
+                        || ((Math.abs(rowFrom - rowTo))
+                        == Math.abs(colFrom - colTo)))
                         && !(rowTo == rowFrom && colFrom == colTo)) {
                     char row = Integer.toString(8 - rowFrom).charAt(0);
                     char col = (char) (colFrom + 'a');

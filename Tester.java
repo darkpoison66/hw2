@@ -26,12 +26,12 @@ public class Tester {
         assert !a1.equals(h8);
 
 
-        /* PAWN
-        Piece pawn = new Pawn(Color.BLACK);
-        System.out.println(pawn.algebraicName().equals(""));
-        System.out.println(pawn.fenName().equals("p"));
-        Square[] attackedPawns = pawn.movesFrom(new Square("f5"));
-        System.out.println(Arrays.toString(attackedPawns));*/
+        ///* PAWN
+        Piece pawn = new Pawn(Color.WHITE);
+        //System.out.println(pawn.algebraicName().equals(""));
+        //System.out.println(pawn.fenName().equals("P"));
+        Square[] attackedPawns = pawn.movesFrom(new Square("a2"));
+        System.out.println(Arrays.toString(attackedPawns));
 
         /* KING
         Piece king = new King(Color.WHITE);

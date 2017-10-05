@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Knight extends Piece {
 
@@ -25,8 +25,10 @@ public class Knight extends Piece {
 
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
-                if ((Math.abs(rowTo - rowFrom) == 2 && Math.abs(colTo - colFrom) == 1)
-                        || (Math.abs(rowTo - rowFrom) == 1 && Math.abs(colTo - colFrom) == 2)) {
+                if ((Math.abs(rowTo - rowFrom) == 2
+                    && Math.abs(colTo - colFrom) == 1)
+                        || (Math.abs(rowTo - rowFrom) == 1
+                            && Math.abs(colTo - colFrom) == 2)) {
                     count++;
                 }
             }
@@ -35,8 +37,10 @@ public class Knight extends Piece {
         Square[] squares = new Square[count];
         for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
             for (int colFrom = 0; colFrom < 8; colFrom++) {
-                if ((Math.abs(rowTo - rowFrom) == 2 && Math.abs(colTo - colFrom) == 1)
-                        || (Math.abs(rowTo - rowFrom) == 1 && Math.abs(colTo - colFrom) == 2)) {
+                if ((Math.abs(rowTo - rowFrom) == 2
+                    && Math.abs(colTo - colFrom) == 1)
+                    || (Math.abs(rowTo - rowFrom) == 1
+                     && Math.abs(colTo - colFrom) == 2)) {
                     char row = Integer.toString(8 - rowFrom).charAt(0);
                     char col = (char) (colFrom + 'a');
                     Square temp = new Square(col, row);

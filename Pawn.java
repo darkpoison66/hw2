@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Pawn extends Piece {
 
@@ -21,94 +20,82 @@ public class Pawn extends Piece {
     }
     @Override
     public Square[] movesFrom(Square square) {
-        int rowTo = 8 - Integer.parseInt(square.toString().substring(1));
-        int colTo = square.toString().charAt(0) - 97;
+        int rowFrom = 8 - Integer.parseInt(square.toString().substring(1));
+        int colFrom = square.toString().charAt(0) - 97;
         int count = 0;
 
-        for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
-            for (int colFrom = 0; colFrom < 8; colFrom++) {
+        for (int rowTo = 0; rowTo < 8; rowTo++) {
+            for (int colTo = 0; colTo < 8; colTo++) {
                 if (this.getColor() == Color.WHITE) {
-                    if (rowTo == 4) {
-                        if (((rowFrom - rowTo == 2) && (colFrom == colTo)) || ((rowFrom - rowTo == 1)
-                                && (colFrom == colTo))
-                                || (((rowFrom - rowTo) == 1)
-                                && (Math.abs(colFrom - colTo) == 1))) {
+                    if (rowFrom == 6) {
+                        if (((rowFrom - rowTo == 2)
+                                || (rowFrom - rowTo == 1))
+                                && (colFrom == colTo)) {
                             count++;
                         }
                     } else {
-                        if (((rowFrom - rowTo == 1) && (colFrom == colTo))
-                                || (((rowFrom - rowTo) == 1)
-                                && (Math.abs(colFrom - colTo) == 1))) {
+                        if ((rowFrom - rowTo == 1)
+                                && (colFrom == colTo)) {
                             count++;
                         }
                     }
                 } else {
-                    if (rowTo == 3) {
-                        if (((rowTo - rowFrom == 1) && (colFrom == colTo))
-                                || ((rowTo - rowFrom == 2) && (colFrom == colTo))
-                                || (((rowTo - rowFrom) == 1)
-                                && (Math.abs(colTo - colFrom) == 1))) {
+                    if (rowFrom == 1) {
+                        if (((rowTo - rowFrom == 2) || (rowTo - rowFrom == 1))
+                                && (colFrom == colTo)) {
                             count++;
-                        } else {
-                            if (((rowTo - rowFrom == 1) && (colFrom == colTo))
-                                    || (((rowTo - rowFrom) == 1)
-                                    && (Math.abs(colTo - colFrom) == 1))) {
-                                count++;
-                            }
+                        }
+                    } else {
+                        if ((rowTo - rowFrom == 1) && (colFrom == colTo)) {
+                            count++;
                         }
                     }
                 }
             }
         }
-
         int x = 0;
         Square[] squares = new Square[count];
-        for (int rowFrom = 0; rowFrom < 8; rowFrom++) {
-            for (int colFrom = 0; colFrom < 8; colFrom++) {
+
+        for (int rowTo = 0; rowTo < 8; rowTo++) {
+            for (int colTo = 0; colTo < 8; colTo++) {
                 if (this.getColor() == Color.WHITE) {
-                    if (rowTo == 4) {
-                        if (((rowFrom - rowTo == 2) && (colFrom == colTo)) || ((rowFrom - rowTo == 1)
-                                && (colFrom == colTo))
-                                || (((rowFrom - rowTo) == 1)
-                                && (Math.abs(colFrom - colTo) == 1))) {
-                            char row = Integer.toString(8 - rowFrom).charAt(0);
-                            char col = (char) (colFrom + 'a');
+                    if (rowFrom == 6) {
+                        if (((rowFrom - rowTo == 2)
+                                || (rowFrom - rowTo == 1))
+                                && (colFrom == colTo)) {
+                            char row = Integer.toString(8 - rowTo).charAt(0);
+                            char col = (char) (colTo + 'a');
                             Square temp = new Square(col, row);
                             squares[x] = temp;
                             x++;
                         }
                     } else {
-                        if (((rowFrom - rowTo == 1) && (colFrom == colTo))
-                                || (((rowFrom - rowTo) == 1)
-                                && (Math.abs(colFrom - colTo) == 1))) {
-                            char row = Integer.toString(8 - rowFrom).charAt(0);
-                            char col = (char) (colFrom + 'a');
+                        if ((rowFrom - rowTo == 1)
+                                && (colFrom == colTo)) {
+                            char row = Integer.toString(8 - rowTo).charAt(0);
+                            char col = (char) (colTo + 'a');
                             Square temp = new Square(col, row);
                             squares[x] = temp;
                             x++;
                         }
                     }
                 } else {
-                    if (rowTo == 3) {
-                        if (((rowTo - rowFrom == 1) && (colFrom == colTo))
-                                || ((rowTo - rowFrom == 2) && (colFrom == colTo))
-                                || (((rowTo - rowFrom) == 1)
-                                && (Math.abs(colTo - colFrom) == 1))) {
-                            char row = Integer.toString(8 - rowFrom).charAt(0);
-                            char col = (char) (colFrom + 'a');
+                    if (rowFrom == 1) {
+                        if (((rowTo - rowFrom == 2) || (rowTo - rowFrom == 1))
+                                && (colFrom == colTo)) {
+                            char row = Integer.toString(8 - rowTo).charAt(0);
+                            char col = (char) (colTo + 'a');
                             Square temp = new Square(col, row);
                             squares[x] = temp;
                             x++;
-                        } else {
-                            if (((rowTo - rowFrom == 1) && (colFrom == colTo))
-                                    || (((rowTo - rowFrom) == 1)
-                                    && (Math.abs(colTo - colFrom) == 1))) {
-                                char row = Integer.toString(8 - rowFrom).charAt(0);
-                                char col = (char) (colFrom + 'a');
-                                Square temp = new Square(col, row);
-                                squares[x] = temp;
-                                x++;
-                            }
+                        }
+                    } else {
+                        if ((rowTo - rowFrom == 1) && (colFrom == colTo)) {
+                            char row = Integer.toString(8 - rowTo).charAt(0);
+                            char col = (char) (colTo + 'a');
+                            Square temp = new Square(col, row);
+                            squares[x] = temp;
+                            x++;
                         }
                     }
                 }
@@ -116,5 +103,44 @@ public class Pawn extends Piece {
         }
         return squares;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
 
