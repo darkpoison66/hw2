@@ -27,10 +27,10 @@ public class Tester {
 
 
         ///* PAWN
-        Piece pawn = new Pawn(Color.WHITE);
+        Piece pawn = new Pawn(Color.BLACK);
         //System.out.println(pawn.algebraicName().equals(""));
         //System.out.println(pawn.fenName().equals("P"));
-        Square[] attackedPawns = pawn.movesFrom(new Square("a2"));
+        Square[] attackedPawns = pawn.movesFrom(new Square("a1"));
         System.out.println(Arrays.toString(attackedPawns));
 
         /* KING
