@@ -2,6 +2,7 @@
  * Represents a square on a chess board
  *
  * @author mabdi3
+ * @version 1.0
  */
 public class Square {
 

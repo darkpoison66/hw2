@@ -1,7 +1,16 @@
-
-
+/**
+ * Represents the Knight piece in chess
+ * @author mabdi3
+ * @version 1.0
+ */
 public class Knight extends Piece {
-
+    /**
+     * Creates a King chess piece of a given color
+     *
+     * @param color the color of the piece
+     *
+     * @see Color
+     */
     public Knight(Color color) {
         super(color);
     }

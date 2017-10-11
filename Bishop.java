@@ -1,12 +1,26 @@
+/**
+ * Represents the Bishop piece in chess
+ * @author mabdi3
+ * @version 1.0
+ */
 public class Bishop extends Piece {
 
+    /**
+     * Creates a Bishop chess piece of a given color
+     *
+     * @param color the color of the piece
+     *
+     * @see Color
+     */
     public Bishop(Color color) {
         super(color);
     }
+
     @Override
     public String algebraicName() {
         return "B";
     }
+
     @Override
     public String fenName() {
         if (this.getColor() == Color.WHITE) {
@@ -15,6 +29,7 @@ public class Bishop extends Piece {
             return "b";
         }
     }
+
     @Override
     public Square[] movesFrom(Square square) {
         int rowTo = 8 - Integer.parseInt(square.toString().substring(1));

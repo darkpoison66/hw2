@@ -1,14 +1,26 @@
-
-
+/**
+ * Represents the King piece in chess
+ * @author mabdi3
+ * @version 1.0
+ */
 public class King extends Piece {
 
+    /**
+     * Creates a King chess piece of a given color
+     *
+     * @param color the color of the piece
+     *
+     * @see Color
+     */
     public King(Color color) {
         super(color);
     }
+
     @Override
     public String algebraicName() {
         return "K";
     }
+
     @Override
     public String fenName() {
         if ((this.getColor()) == Color.WHITE) {
@@ -17,6 +29,7 @@ public class King extends Piece {
             return "k";
         }
     }
+
     @Override
     public Square[] movesFrom(Square square) {
         int rowTo = 8 - Integer.parseInt(square.toString().substring(1));

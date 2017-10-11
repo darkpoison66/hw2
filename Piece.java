@@ -2,13 +2,14 @@
  * Represents any of six pieces in chess
  *
  * @author mabdi3
+ * @version 1.0
  */
 public abstract class Piece {
 
     private Color color;
 
     /**
-     * Creates a chess piece of a given color.
+     * Creates a chess piece of a given color
      * with all required paramters.
      *
      * @param color the color of the chess piece.
